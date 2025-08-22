@@ -26,14 +26,14 @@ local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://9129360055"
 sound.Volume = 10
 sound.Looped = true
-sound.PlayOnRemove = false
-sound.Parent = Player:WaitForChild("PlayerGui")
-
+sound.Parent = PlayerGui
 sound:Play()
 
-while gui.Parent do
-    frame.BackgroundColor3 = Color3.new(1,0,0)
-    task.wait(0.1)
-    frame.BackgroundColor3 = Color3.new(0,0,0)
-    task.wait(0.1)
-end
+task.spawn(function()
+    while gui.Parent do
+        frame.BackgroundColor3 = Color3.new(1,0,0)
+        task.wait(0.1)
+        frame.BackgroundColor3 = Color3.new(0,0,0)
+        task.wait(0.1)
+    end
+end)
