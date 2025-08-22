@@ -1,29 +1,23 @@
--- Jeff the Killer Troll (Local Only)
--- Harmless: Only the player running this sees/hears it
-
--- Create a ScreenGui
 local player = game.Players.LocalPlayer
 local gui = Instance.new("ScreenGui")
 gui.Parent = player:WaitForChild("PlayerGui")
 
--- Jeff Image
 local img = Instance.new("ImageLabel")
 img.Size = UDim2.new(1, 0, 1, 0)
 img.Position = UDim2.new(0, 0, 0, 0)
 img.BackgroundTransparency = 1
-img.Image = "rbxassetid://14120578933" -- Jeff the Killer image (can swap with your own)
+img.Image = "rbxassetid://14120578933" 
 img.Parent = gui
 
--- Sound spam
 task.spawn(function()
     while true do
         local sound = Instance.new("Sound")
-        sound.SoundId = "rbxassetid://1842533877" -- Replace with your TikTok sound if you upload to Roblox
+        sound.SoundId = "rbxassetid://1842533877"
         sound.Volume = 10 -- very loud
         sound.Looped = false
         sound.Parent = player:WaitForChild("PlayerGui")
         sound:Play()
         game:GetService("Debris"):AddItem(sound, 5)
-        task.wait(0.2) -- spam interval
+        task.wait(0.2) -- 
     end
 end)
